@@ -42,43 +42,50 @@ img {
     align-items: center;
     margin: 0;
 }
+
 .card-text {
     font-size: 100px;
     margin-bottom: 3rem;
     color: aliceblue;
     font-family: 'Yanone Kaffeesatz';
 }
+@media (max-width: 768px) {
+    .card-text {
+      visibility: hidden;
+    }
+    .left-panel,
+    img {
+        min-width: 11rem;
+    }
+}
 .quote {
     font-size: 20px;
     color: rgb(0, 0, 0);
-    margin: 7rem 8rem 0 3rem;
+    margin: 5rem 2rem 0 3rem;
+    max-height: 20rem;
 }
 
 .prompt {
-    margin-top: 2rem;
+    display: flex;
+    margin-top: 4rem;
     font-weight: 600;
     font-family: 'Yanone Kaffeesatz';
     font-size: 25px;
+    margin-left: 3rem;
 }
 .singularity {
+    margin-left: 0.4rem;
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
     background-image: linear-gradient(to right, #e5acdf, #7abaff);
     -webkit-background-image: -webkit-linear-gradient(to right, #e5acdf, #7abaff);
 }
-
 .first-name {
     margin-left: 4rem;
 }
-
-.top {
-    margin-top: 0;
-    height: 200px;
-}
-
 form {
-    margin-top: 8rem;
+    margin-top: 1rem;
 }
 .first-row,
 .second-row,
@@ -86,6 +93,7 @@ form {
     display: flex;
     justify-content: flex-start;
     margin-top: 2rem;
+    margin-right: 1rem;
 
 }
 .first-name-label,
@@ -109,12 +117,24 @@ form {
 }
 
 input {
+    appearance: none;
     background-color: #FFFFFF;
     border: 1px solid #D6D9DC;
     border-radius: 3px;
     width: 100%;
     padding: 7px;
     font-size: 14px;
+    box-sizing: border-box;
+    outline-style: none;
+    box-shadow: none;
+}
+
+input:focus {
+    border: 0.1rem solid #4997eb;
+    box-shadow: 0 9px 10px -10px #888;
+}
+input:invalid {
+    border: 0.1rem solid red;
 }
 
 .right-panel .third-row {
@@ -135,7 +155,8 @@ button {
     cursor: pointer;
     box-shadow: 0 10px 10px -10px #888;
     background-size: 200% auto;
-    animation: gradient 4s ease infinite;
+    animation: gradient 2s ease infinite;
+    margin-right: 1rem;
 }
 
 @keyframes gradient {
